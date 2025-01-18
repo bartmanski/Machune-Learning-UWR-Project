@@ -8,5 +8,6 @@ Follow these steps to set up the required datasets for this project:
 
 The datasets should be automatically downloaded into the `Datasets` folder.
 If not download them manualy from links below:
+
 https://www.kaggle.com/datasets/shaunthesheep/microsoft-catsvsdogs-dataset
 https://www.kaggle.com/datasets/pankajkumar2002/random-image-sample-dataset
