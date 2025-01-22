@@ -6,6 +6,8 @@ def image_to_array(path_to_image , size = (64,64), if_gray = False):
     array_img = Image.open(path_to_image)
     if (if_gray):
         array_img = array_img.convert('L')
+    else:
+        array_img = array_img.convert('RGB')
     array_img=array_img.resize(size)
     return np.array(array_img).flatten()
 
