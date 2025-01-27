@@ -24,6 +24,9 @@ labels = np.array(cats_label + dogs_label + random_label)
 X_train, X_test, y_train, y_test = train_test_split(Search_space, labels, test_size=0.2, random_state=42)
 
 
+np.save('Models/test_data/Logreg_X_test.npy', X_test)
+np.save('Models/test_data/Logreg_Y_test.npy', y_test)
+
 #Debug
 
 print("zacząłem liczyć")
@@ -36,6 +39,9 @@ log_reg_lbfsg_noregularization= LogisticRegression(
 
 log_reg_lbfsg_noregularization.fit(X_train, y_train)
 
+joblib.dump(log_reg_lbfsg_noregularization, 'Models/calculated_models/log_reg_lbfsg_noregularization.joblib')
+print('Trained and saved Logistic Regression model.')
+
 #Debug
 
 print("1 - policzone")
@@ -47,6 +53,9 @@ log_reg_saga_noregularization = LogisticRegression(
 )
 
 log_reg_saga_noregularization.fit(X_train, y_train)
+
+joblib.dump(log_reg_saga_noregularization, 'Models/calculated_models/log_reg_saga_noregularization.joblib')
+print('Trained and saved Logistic Regression model.')
 
 #Debug
 
@@ -62,6 +71,9 @@ log_reg_saga_l1 = LogisticRegression(
 
 log_reg_saga_l1.fit(X_train, y_train)
 
+joblib.dump(log_reg_saga_l1, 'Models/calculated_models/log_reg_saga_l1.joblib')
+print('Trained and saved Logistic Regression model.')
+
 #Debug
 
 print("3 - policzone")
@@ -75,21 +87,9 @@ log_reg_saga_l2 = LogisticRegression(
 )
 
 log_reg_saga_l2.fit(X_train, y_train)
-
+joblib.dump(log_reg_saga_l2, 'Models/calculated_models/log_reg_saga_l2.joblib')
+print('Trained and saved Logistic Regression model.')
+ 
 #Debug
 
 print("4 - policzone")
- 
-joblib.dump(log_reg_lbfsg_noregularization, 'calculated_models/log_reg_lbfsg_noregularization.joblib')
-print('Trained and saved Logistic Regression model.')
-joblib.dump(log_reg_saga_noregularization, 'calculated_models/log_reg_saga_noregularization.joblib')
-print('Trained and saved Logistic Regression model.')
- 
-joblib.dump(log_reg_saga_l1, 'calculated_models/log_reg_saga_l1.joblib')
-print('Trained and saved Logistic Regression model.')
-joblib.dump(log_reg_saga_l2, 'calculated_models/log_reg_saga_l2.joblib')
-print('Trained and saved Logistic Regression model.')
- 
-
-np.save('test_data/Logreg_X_test.npy', X_test)
-np.save('test_data/Logreg_Y_test.npy', y_test)
